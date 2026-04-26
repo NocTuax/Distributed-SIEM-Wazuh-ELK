@@ -1,0 +1,21 @@
+Hydra v9.6 (c) 2023 by van Hauser/THC & David Maciejak
+Starting at 2026-04-26 07:42:36
+
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 100 login tries (l:10/p:10), ~7 tries per task
+[DATA] attacking ssh://192.168.1.24:22/
+
+[STATUS] 81.00 tries/min, 81 tries in 00:01h, 19 to do in 00:01h
+[STATUS] 83.00 tries/min, 83 tries in 00:01h, 17 to do in 00:01h
+
+[22][ssh] host: 192.168.1.24   login: jadihacker   password: jadihacker
+
+[STATUS] attack finished for 192.168.1.24 (waiting for childs)
+
+1 of 1 target completed, 1 valid password found
+Hydra finished at 2026-04-26 07:42:59
+
+Summary:
+- Target: 192.168.1.24:22
+- Total attempts: 100
+- Successful login: 1 (jadihacker:jadihacker)
+- Duration: 23 seconds
