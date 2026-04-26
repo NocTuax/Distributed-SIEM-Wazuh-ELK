@@ -1,0 +1,13 @@
+=== WAZUH ALERT SUMMARY ===
+Simulation: SSH Bruteforce (Hydra)
+Date: April 26, 2026
+Source IP: 192.168.1.29
+
+=== ALERTS ===
+Rule 5763 (Level 10): sshd: brute force trying to get access
+Rule 5760 (Level 5): sshd: authentication failed
+Rule 5710 (Level 5): Attempt to login using non-existent user
+Rule 5503 (Level 5): SSH: User login failed
+
+=== MITRE ATT&CK ===
+T1110, T1110.001, T1021.004
