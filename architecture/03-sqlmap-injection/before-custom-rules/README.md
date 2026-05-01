@@ -5,12 +5,13 @@ April 27, 2026
 
 ## 🖥️ Lab Environment
 
-| Host | Role | IP Address |
-|------|------|------------|
-| Kali Linux | Attacker | `192.168.1.29` |
-| Target Server | Victim (DVWA) | `192.168.1.24` |
-| Wazuh Manager | SIEM | `192.168.1.18` |
+## Network Topology
 
+| Host | Role | IP Address |
+|------|------|-------------|
+| Kali Linux | Attacker | `192.168.1.29` |
+| Target Server | Victim | `192.168.1.17` |
+| Wazuh Manager | SIEM | `192.168.1.18` |
 ---
 
 # ⚔️ Attack Execution
