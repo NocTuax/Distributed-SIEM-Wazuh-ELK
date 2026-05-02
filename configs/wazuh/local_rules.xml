@@ -1,0 +1,21 @@
+<!-- Custom rule for Nmap Scripting Engine detection -->
+<group name="custom_suricata_rules,">
+  <rule id="100200" level="12">
+    <if_sid>86600</if_sid>
+    <field name="event_type">^alert$</field>
+    <match>ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine)</match>
+    <description>Nmap scripting engine detected.</description>
+    <mitre>
+      <id>T1595</id>
+    </mitre>
+  </rule>
+</group>
+
+<!-- Custom rule for Command Injection detection -->
+<group name="custom_command_injection,">
+  <rule id="100250" level="12">
+    <if_group>web</if_group>
+    <match>; | & | \| | \`</match>
+    <description>Possible command injection detected</description>
+  </rule>
+</group>
