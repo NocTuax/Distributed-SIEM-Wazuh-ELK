@@ -49,26 +49,29 @@ Proyek ini adalah implementasi infrastruktur **Security Operations Center (SOC)*
 | Create Account | T1136 |
 
 ## 📁 Project Structure
+
+```
 Distributed-SIEM-Wazuh-ELK/
-├── architecture/ # Hasil scan & simulasi
-│ ├── 01-reconnaissance-nmap/
-│ ├── 02-hydra-bruteforce/
-│ ├── 03-sqlmap-injection/
-│ ├── 04-command-injection/
-│ ├── 05-lfi-path-traversal/
-│ ├── 06-metasploit-vsftpd/
-│ └── 07-malware-detection/
-├── configs/ # File konfigurasi
-│ └── wazuh/
-│ ├── ossec_agent.conf
-│ ├── ossec_manager.conf
-│ ├── local_rules.xml
-│ ├── local_decoder.xml
-│ └── sysmon_config.xml
-├── dashboards/ # Export dashboard Kibana
-└── reports/ # Laporan PDF
-├── Windows_Threat_Detection_1_Report.pdf
-└── ELK_Analyst_Report.pdf
+├── architecture/                          # Hasil scan & simulasi
+│   ├── 01-reconnaissance-nmap/
+│   ├── 02-hydra-bruteforce/
+│   ├── 03-sqlmap-injection/
+│   ├── 04-command-injection/
+│   ├── 05-lfi-path-traversal/
+│   ├── 06-metasploit-vsftpd/
+│   └── 07-malware-detection/
+├── configs/                               # File konfigurasi
+│   └── wazuh/
+│       ├── ossec_agent.conf
+│       ├── ossec_manager.conf
+│       ├── local_rules.xml
+│       ├── local_decoder.xml
+│       └── sysmon_config.xml
+├── dashboards/                            # Export dashboard Kibana
+└── reports/                               # Laporan PDF
+    ├── Windows_Threat_Detection_1_Report.pdf
+    └── ELK_Analyst_Report.pdf
+```
 
 
 ## 🛠️ Tools Used
