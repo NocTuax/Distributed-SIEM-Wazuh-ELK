@@ -1,4 +1,4 @@
-<!-- Custom rule for Nmap Scripting Engine detection -->
+<!-- Custom rule untuk Nmap Scripting Engine detection -->
 <group name="custom_suricata_rules,">
   <rule id="100200" level="12">
     <if_sid>86600</if_sid>
@@ -11,11 +11,20 @@
   </rule>
 </group>
 
-<!-- Custom rule for Command Injection detection -->
+<!-- Custom rule untuk Command Injection detection -->
 <group name="custom_command_injection,">
   <rule id="100250" level="12">
     <if_group>web</if_group>
     <match>; | & | \| | \`</match>
     <description>Possible command injection detected</description>
+  </rule>
+</group>
+
+<!-- Custom rule untuk VirusTotal malware removal -->
+<group name="virustotal,">
+  <rule id="100092" level="12">
+    <if_sid>657</if_sid>
+    <match>Successfully removed threat</match>
+    <description>$(parameters.program) removed threat located at $(parameters.alert.data.virustotal.source.file)</description>
   </rule>
 </group>
